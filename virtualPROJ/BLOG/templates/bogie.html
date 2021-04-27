@@ -1,0 +1,28 @@
+{%extends 'base.html'%}
+{%block content%}
+<div class="container">
+<h1>{{post.title}}</h1>
+<p>{{post.date}}</p>
+<hr>
+    <p>{{post.body|safe}}</p><h1>Comment</h1>
+{% for comment in post.comment_set.all %}
+
+<p>{{ comment.author }} ({{ comment.comment_date }}) {{ comment.description|safe }}</p>
+{% endfor %}
+<hr>
+{% if user.is_authenticated %}
+   <form action="" method="post">
+    {% csrf_token %}
+    <table>
+    {{ commentform.as_table }}
+    </table>
+    <button type="submit">Submit</button>
+       {%else%}
+       <a href="{%url 'login'%}">Add Comment</a>
+       {%endif%}
+
+</form>
+</div>
+
+
+{%endblock%}
