@@ -1,0 +1,17 @@
+{%extends 'base.html'%}
+
+{%block content%}
+{%for post in object_list%}<br>
+<div class="container">
+    <div class="card">
+  <a href="{%url 'bogie' post.pk%}">
+        <div class="card-body">
+      <img src="{{post.img}}" style="height:100px; width:100px;position:absolute; right:30px">
+  <h1>{{post.title}}</h1>
+<p>{{post.date}}</p></a>
+  </div>
+</div>
+<br>
+</div>
+{%endfor%}
+{%endblock%}

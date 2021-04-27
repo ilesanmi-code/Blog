@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {%if user.is_authenticated%}
+    <h1>Hi {{first_name}} this is your account dashboard and u are logged in</h1>
+    <button><a href="{%url 'logout'%}">Logout</a></button>
+{%else%}
+    <h1>You are not logged in</h1>    <button><a href="{%url 'login'%}">Login</a></button>
+
+{%endif%}
+</body>
+</html>

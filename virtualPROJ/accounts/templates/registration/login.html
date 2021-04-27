@@ -1,0 +1,11 @@
+    {%extends 'base.html'%}
+    {%block content%}<br>
+      <form class= "container"method="post" class="form-group">
+        {%csrf_token%}
+        <p><label class="form-label" for="id_username">Username:</label> <input type="text" class="form-control" name="username" autofocus autocapitalize="none" autocomplete="username" maxlength="150" required id="id_username"></p>
+<p><label class="form-label" for="id_password">Password:</label> <input type="password" class="form-control" name="password" autocomplete="current-password" required id="id_password"></p>
+
+                  <button style="height:40px; border:none;width:70px; border-radius:10px;" class="btn-primary">Login</button>
+
+    </form>
+    {%endblock%}

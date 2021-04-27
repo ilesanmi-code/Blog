@@ -1,0 +1,12 @@
+{%extends 'base.html'%}
+{%block content%}
+{%if user.is_authenticated%}
+<form method="post">
+    {%csrf_token%}
+    {{form.as_p}}
+    <button>Post</button>
+</form>
+{%else%}
+<h1>Only admins are allowed</h1>
+{%endif%}
+{%endblock%}
